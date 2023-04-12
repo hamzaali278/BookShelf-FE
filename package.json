@@ -1,5 +1,4 @@
 {
-
   "homepage": "https://hamzaali278.github.io/BookShelf-FE",
   "name": "client",
   "version": "0.1.0",
@@ -45,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
