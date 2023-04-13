@@ -20,6 +20,16 @@ const Navbar = ({ title, icon }) => {
 
   const authLinks = (
     <>
+      <li className="nav-item">
+            <Link className="nav-link text-white" to="/">
+              Home
+            </Link>
+          </li>
+      <li className="nav-item">
+        <Link className="nav-link text-white" to="/bookShelf">
+          BookShelf
+        </Link>
+      </li>
       <li className="nav-item nav-link text-white">
         Hello {user && user.name}
       </li>
@@ -29,6 +39,7 @@ const Navbar = ({ title, icon }) => {
           <span className="hide-sm">Logout</span>
         </a>
       </li>
+      
     </>
   );
 
@@ -69,17 +80,15 @@ const Navbar = ({ title, icon }) => {
       >
         <ul className="navbar-nav float-sm-right ml-auto my-auto">
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link text-white" to="/allBooks">
-                AllBooks
+              AllBooks
             </Link>
           </li>
-          {isAuthenticated ? authLinks : guestLinks}
           
+
+
+          {isAuthenticated ? authLinks : guestLinks}
+
         </ul>
       </div>
     </nav>

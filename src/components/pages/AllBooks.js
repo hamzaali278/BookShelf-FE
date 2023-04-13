@@ -18,7 +18,7 @@ const AllBooks = () => {
         getAllBooks();
     }, [])
     return (
-<div>AllBooks
+<div><h1>Public Books</h1>
 {books?.map((item, index) => {
                 return (
                     item.type === "public" ? 

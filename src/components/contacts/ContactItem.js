@@ -14,6 +14,9 @@ const ContactItem = ({ contact }) => {
     deleteContact(_id);
     clearCurrent();
   };
+  const onMove = () => {
+    // moveCurrent(_id);
+  }
 
   return (
     <div className="card my-2 bg-white">
@@ -44,6 +47,9 @@ const ContactItem = ({ contact }) => {
         </button>
         <button className="btn btn-sm btn-danger px-4 mr-1" onClick={onDelete}>
           Delete
+        </button>
+        <button className="btn btn-sm btn-danger px-4 mr-1" onClick={onMove}>
+          Add to BookShelf
         </button>
       </div>
     </div>
