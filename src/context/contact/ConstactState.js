@@ -152,8 +152,8 @@ const ConstactState = (props) => {
   const clearContacts = () => {
     dispatch({ type: CLEAR_CONTACTS });
   };
-  const moveCurrent = (id) => {
-    dispatch({ type: Move_CURRENT ,payload: id});
+  const moveCurrent = (contact) => {
+    dispatch({ type: Move_CURRENT ,payload: contact});
   };
   // Set Current Contact
   const setCurrent = (contact) => {

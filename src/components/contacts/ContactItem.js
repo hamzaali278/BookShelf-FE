@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 // Context
 import contactContext from "../../context/contact/contactContext";
 
+
 const ContactItem = ({ contact }) => {
   const ContactContext = useContext(contactContext);
-  const { deleteContact, setCurrent, clearCurrent } = ContactContext;
+  const { deleteContact, setCurrent, clearCurrent,moveCurrent } = ContactContext;
 
   const { _id, bookName, isbn, description, type } = contact;
 
@@ -15,7 +16,8 @@ const ContactItem = ({ contact }) => {
     clearCurrent();
   };
   const onMove = () => {
-    // moveCurrent(_id);
+    console.log(contact);
+    moveCurrent(contact)
   }
 
   return (
@@ -34,9 +36,9 @@ const ContactItem = ({ contact }) => {
         </span>
       </div>
       <div className="card-body m-0 p-0 pl-4 pt-2">
-        <i className="fas fa-envelope-open"></i> {isbn}
+        <i className="fas fa-book"></i> {isbn}
         <br />
-        <i className="fas fa-phone-alt"></i> {description}
+        {description}
       </div>
       <div className="card-footer bg-white border-0">
         <button

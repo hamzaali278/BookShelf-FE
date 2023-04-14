@@ -41,10 +41,7 @@ export default (state, action) => {
       case Move_CURRENT:
         return {
           ...state,
-          contacts: state.contacts.filter(
-            (contact) => contact._id !== action.payload
-          ),
-          loading: false,
+          current: action.payload,
         };
     case DELETE_CONTACT:
       return {
