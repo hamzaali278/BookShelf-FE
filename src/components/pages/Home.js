@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 
 // Components
 import Contacts from "../contacts/Contacts";
-import ContactForm from "../contacts/ContactForm";
+// import ContactForm from "../contacts/ContactForm";
 import ContactFilter from "../contacts/ContactFilter";
 
 // Context
@@ -32,13 +32,11 @@ const Home = () => {
     <div className="container">
       {/* <h1 className="text-dark">Home</h1> */}
       <div className="row">
-        <div className="col-md-6 col-sm 12">
-          <ContactForm />
-        </div>
-        <div className="col-md-6 col-sm 12">
+        
+        {/* <div className="col-md-6 col-sm 12"> */}
           <ContactFilter />
           <Contacts />
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
