@@ -15,6 +15,7 @@ import {
   CLEAR_FILTER,
   CONTACT_ERROR,
   CLEAR_ERRORS,
+  Move_CURRENT,
   SET_ALERT,
   REMOVE_ALERT,
 } from "../types";
@@ -60,7 +61,7 @@ const ConstactState = (props) => {
 
   // Add Contact
   const addContact = async (contact) => {
-    console.log('contact state: ', contact)
+    // console.log('contact state: ', contact)
     const config = {
       headers: {
         "Content-type": "application/json",
@@ -151,7 +152,9 @@ const ConstactState = (props) => {
   const clearContacts = () => {
     dispatch({ type: CLEAR_CONTACTS });
   };
-
+  const moveCurrent = (contact) => {
+    dispatch({ type: Move_CURRENT ,payload: contact});
+  };
   // Set Current Contact
   const setCurrent = (contact) => {
     dispatch({ type: SET_CURRENT, payload: contact });
@@ -195,6 +198,7 @@ const ConstactState = (props) => {
         clearFilter,
         clearContacts,
         clearErrors,
+        moveCurrent
       }}
     >
       {props.children}

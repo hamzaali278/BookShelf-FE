@@ -12,6 +12,7 @@ import {
   REMOVE_ALERT,
   CONTACT_ERROR,
   CLEAR_ERRORS,
+  Move_CURRENT,
 } from "../types";
 
 export default (state, action) => {
@@ -37,6 +38,11 @@ export default (state, action) => {
         }),
         loading: false,
       };
+      case Move_CURRENT:
+        return {
+          ...state,
+          current: action.payload,
+        };
     case DELETE_CONTACT:
       return {
         ...state,

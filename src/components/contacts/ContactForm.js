@@ -24,10 +24,11 @@ const ContactForm = () => {
   const { bookName, isbn, description, type } = contact;
 
   useEffect(() => {
-    console.log('current: ', current)
+    // console.log('current: ', current)
     if (current !== null) {
       setContact(current);
     } else {
+      // console.log('current null: ', current)
       clearFormFields();
     }
   }, [contactContext, current]);

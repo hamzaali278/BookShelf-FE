@@ -19,7 +19,7 @@ const Contacts = () => {
   }, []);
 
   if (contacts !== null && contacts.length === 0 && !loading) {
-    return <h3>No contacts to display!</h3>;
+    return <h3>No Books to display!</h3>;
   }
 
   return (
