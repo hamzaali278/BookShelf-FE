@@ -5,16 +5,13 @@ import PropTypes from "prop-types";
 import contactContext from "../../context/contact/contactContext";
 
 
-const ContactItem = ({ contact }) => {
+const ShelfItem = ({ contact }) => {
   const ContactContext = useContext(contactContext);
   const { deleteContact, setCurrent, clearCurrent,moveCurrent } = ContactContext;
 
   const { _id, bookName, isbn, description, type } = contact;
 
-  const onDelete = (e) => {
-    deleteContact(_id);
-    clearCurrent();
-  };
+  
   const onMove = () => {
     // console.log(contact);
     // moveCurrent(contact)
@@ -41,25 +38,17 @@ const ContactItem = ({ contact }) => {
         {description}
       </div>
       <div className="card-footer bg-white border-0">
-        <button
-          className="btn btn-sm btn-dark px-4 mr-1"
-          onClick={() => setCurrent(contact)}
-        >
-          Edit
-        </button>
-        <button className="btn btn-sm btn-danger px-4 mr-1" onClick={onDelete}>
-          Delete
-        </button>
-        <button className="btn btn-sm btn-danger px-4 mr-1" onClick={onMove}>
-          Add to BookShelf
+        
+        <button className="btn btn-sm btn-danger px-4 mr-1" >
+          Remove From Shelf
         </button>
       </div>
     </div>
   );
 };
 
-ContactItem.propTypes = {
+ShelfItem.propTypes = {
   contact: PropTypes.object.isRequired,
 };
 
-export default ContactItem;
+export default ShelfItem;

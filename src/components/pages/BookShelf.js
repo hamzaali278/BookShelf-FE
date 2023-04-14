@@ -1,14 +1,53 @@
 
-// import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ContactContext from "../../context/contact/contactContext";
-import Contacts from "../contacts/Contacts";
-import React from 'react'
+import Spinner from "../layout/Spinner";
+import ShelfItem from "../contacts/ShelfItem";
+// import React from 'react'
 
 const BookShelf = () => {
-    return (
-      <Contacts/>
-    
-  )
+    const contactContext = useContext(ContactContext);
+
+  const { contacts, filtered, getContacts, getAllContacts ,loading } = contactContext;
+
+  useEffect(() => {
+    getContacts();
+    // getAllContacts();
+  }, []);
+
+  if (contacts !== null && contacts.length === 0 && !loading) {
+    return <h3>No Books to display!</h3>;
+  }
+  return (
+    <>
+      {contacts !== null && !loading ? (
+        <>
+          {filtered !== null
+            ? filtered.map((contact) => (
+                <ShelfItem key={contact._id} contact={contact} />
+              ))
+            : contacts.map((contact) => (
+                <ShelfItem key={contact._id} contact={contact} />
+              ))}
+        </>
+      ) : (
+        <Spinner />
+      )}
+      {/* <TransitionGroup>
+        {filtered !== null
+          ? filtered.map((contact) => (
+              <CSSTransition key={contact.id} timeout={500} classNames="item">
+                <ContactItem contact={contact} />
+              </CSSTransition>
+            ))
+          : contacts.map((contact) => (
+              <CSSTransition key={contact.id} timeout={500} classNames="item">
+                <ContactItem contact={contact} />
+              </CSSTransition>
+            ))}
+      </TransitionGroup> */}
+    </>
+  );
 }
 
 // const BookShelf = () => {
